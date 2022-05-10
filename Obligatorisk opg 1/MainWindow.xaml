@@ -1,0 +1,43 @@
+﻿<Window x:Class="Obligatorisk_opg_1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Obligatorisk_opg_1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Name="mainGrid" Background="AntiqueWhite" Margin="0,10,0,11">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="269*"/>
+        </Grid.RowDefinitions>
+
+        <ListBox 
+            ItemsSource="{Binding}"
+            Name="LaanerBox" 
+            SelectionChanged="BeggeBox_SelectionChanged" 
+            Margin="57,46,532,229" Grid.Row="1"
+            DisplayMemberPath="Show"/>
+        <ListBox 
+            ItemsSource="{Binding}" 
+            DisplayMemberPath="Show" 
+            Name="BogBox" 
+            Margin="463,46,140,229" 
+            Grid.Row="1"/>
+        <TextBlock Background="AntiqueWhite" HorizontalAlignment="Left" Margin="57,25,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Lånere" VerticalAlignment="Top" RenderTransformOrigin="1.331,0.484"></TextBlock>
+        <TextBlock Background="AntiqueWhite" HorizontalAlignment="Left" Margin="463,25,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Bøger" VerticalAlignment="Top" RenderTransformOrigin="1.359,0.46"></TextBlock>
+        <TextBlock   Background="AntiqueWhite" HorizontalAlignment="Left" Margin="57,170,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Valgte låners bøger" VerticalAlignment="Top" Width="120"/>
+        <ListBox 
+            ItemsSource="{Binding}" 
+            DisplayMemberPath="Show" 
+            Name="BeggeBox" 
+            Grid.Row="1" 
+            Margin="57,203,532,67"/>
+        <Button Background="White" Content="Tilføj Bog til låner" Click="TilfoejBog" HorizontalAlignment="Left" Margin="326,86,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Button Background="White" Content="Fjern Bog fra låner" Click="FjernBog" HorizontalAlignment="Left" Margin="326,265,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Button Background="White" Content="Bogens Detaljer" Click="DetaljeBtn" HorizontalAlignment="Left" Margin="665,86,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Button Background="White" Click="LaanerWindowBtn" Content="Se Lånere" HorizontalAlignment="Left" Margin="326,145,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+
+
+    </Grid>
+</Window>
